@@ -10,70 +10,62 @@
 <meta property="og:description" content="Слухай на всіх платформах">
 <meta property="og:image" content="https://i.scdn.co/image/ab67616d0000b273fb3c00a323ff629346e1e23d">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#20232e">
+<meta name="theme-color" content="#23252d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%232f4bff'/%3E%3C/svg%3E">
 <style>
 :root{
-  --graphite:#20232e; --ink:#f5f7ff; --muted:#9aa2ba;
-  --blue:#5b78ff; --blue-soft:#aeb9ff; --line:rgba(122,140,255,.28); --radius:20px;
+  --bg:#23252d; --card:#2c2f39; --card-h:#343845; --ink:#f2f4fa;
+  --muted:#9298ab; --accent:#aeb9ff; --radius:18px;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 body{
   font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-weight:400;
-  color:var(--ink);background:var(--graphite);line-height:1.5;
+  color:var(--ink);background:var(--bg);line-height:1.5;
   -webkit-font-smoothing:antialiased;min-height:100vh;position:relative;overflow-x:hidden;
-  padding:max(30px,env(safe-area-inset-top)) 18px max(30px,env(safe-area-inset-bottom));
+  padding:max(34px,env(safe-area-inset-top)) 18px max(30px,env(safe-area-inset-bottom));
   display:flex;flex-direction:column;align-items:center;
 }
-/* Графітовий градієнт (глибина) */
-body::before{content:"";position:fixed;inset:0;z-index:-2;
-  background:linear-gradient(180deg,#2b3040 0%,#20232e 42%,#141620 100%)}
-/* Обкладинка «перетікає» у фон: розмитий ambient зверху, маска у графіт */
-.ambient{position:fixed;top:0;left:0;right:0;height:78vh;z-index:-1;
-  background-size:cover;background-position:center top;
-  filter:blur(58px) saturate(1.45);transform:scale(1.35);opacity:.55;
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 46%,transparent 82%);
-  mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.55) 46%,transparent 82%)}
+/* Матовий графітовий фон — ледь помітна глибина, без кольору */
+body::before{content:"";position:fixed;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#282b34 0%,#23252d 55%,#1b1d23 100%)}
 .wrap{width:100%;max-width:430px;margin:auto 0;display:flex;flex-direction:column;
   align-items:center;text-align:center}
 .cover{width:min(70vw,272px);height:min(70vw,272px);border-radius:var(--radius);
-  object-fit:cover;background:#2a2e3a;
-  box-shadow:0 26px 70px -20px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.07)}
-.artist{font-size:13px;font-weight:500;letter-spacing:.16em;color:var(--blue-soft);
+  object-fit:cover;background:#2b2e38;
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05)}
+.artist{font-size:13px;font-weight:500;letter-spacing:.16em;color:var(--accent);
   margin:26px 0 7px;text-transform:uppercase}
 h1{font-size:27px;font-weight:500;letter-spacing:-.01em;margin:0;color:#fff}
 .subtitle{font-size:12.5px;font-weight:400;color:var(--muted);margin:18px 0 0;
   letter-spacing:.04em}
 .list{width:100%;display:flex;flex-direction:column;gap:11px;margin-top:24px}
 .btn{display:flex;align-items:center;gap:14px;width:100%;padding:15px 18px;
-  border:1.5px solid var(--line);border-radius:15px;background:rgba(255,255,255,.045);
-  color:#fff;text-decoration:none;font-weight:500;font-size:15.5px;
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  transition:border-color .18s,background .18s,transform .12s,box-shadow .18s}
-.btn:hover{border-color:var(--blue);background:rgba(91,120,255,.14);
-  transform:translateY(-1px);box-shadow:0 12px 32px -16px rgba(91,120,255,.7)}
+  border:none;border-radius:14px;background:var(--card);color:#fff;
+  text-decoration:none;font-weight:500;font-size:15.5px;
+  box-shadow:0 1px 2px rgba(0,0,0,.22);
+  transition:background .16s,transform .12s}
+.btn:hover{background:var(--card-h);transform:translateY(-1px)}
 .btn:active{transform:scale(.99)}
 .btn .ic{width:24px;height:24px;display:grid;place-items:center;flex:0 0 24px}
 .btn .ic.badge{border-radius:8px;font-size:13px;font-weight:600;width:26px;height:26px}
 .btn .nm{flex:1;text-align:left}
 .btn .go{color:var(--muted);flex:0 0 auto}
-.btn:hover .go{color:var(--blue-soft)}
+.btn:hover .go{color:var(--accent)}
 .empty{color:var(--muted);font-size:14px;margin-top:22px}
-footer{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:9px}
-footer img{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+footer{margin-top:42px;display:flex;flex-direction:column;align-items:center;gap:10px}
+footer img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92}
 footer .cap{font-size:10px;letter-spacing:.36em;text-transform:uppercase;
   color:var(--muted);font-weight:500}
 @media(min-width:480px){h1{font-size:30px}}
 </style>
 </head>
 <body>
-<div class="ambient" style="background-image:url(https://i.scdn.co/image/ab67616d0000b273fb3c00a323ff629346e1e23d)"></div>
 <main class="wrap">
-  <img class="cover" src="https://i.scdn.co/image/ab67616d0000b273fb3c00a323ff629346e1e23d" alt="" loading="eager" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27300%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%236b7391%27%20stroke-width%3D%271.1%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2724%27%20height%3D%2724%27%20rx%3D%272%27%20fill%3D%27%232a2e3a%27%20stroke%3D%27none%27/%3E%3Cpath%20d%3D%27M9%2018V5l12-2v13%27/%3E%3Ccircle%20cx%3D%276%27%20cy%3D%2718%27%20r%3D%273%27/%3E%3Ccircle%20cx%3D%2718%27%20cy%3D%2716%27%20r%3D%273%27/%3E%3C/svg%3E'">
+  <img class="cover" src="https://i.scdn.co/image/ab67616d0000b273fb3c00a323ff629346e1e23d" alt="" loading="eager" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27300%27%20viewBox%3D%270%200%2024%2024%27%20fill%3D%27none%27%20stroke%3D%27%236b7391%27%20stroke-width%3D%271.1%27%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20width%3D%2724%27%20height%3D%2724%27%20rx%3D%272%27%20fill%3D%27%232b2e38%27%20stroke%3D%27none%27/%3E%3Cpath%20d%3D%27M9%2018V5l12-2v13%27/%3E%3Ccircle%20cx%3D%276%27%20cy%3D%2718%27%20r%3D%273%27/%3E%3Ccircle%20cx%3D%2718%27%20cy%3D%2716%27%20r%3D%273%27/%3E%3C/svg%3E'">
   <p class="artist">Шугар</p>
   <h1>Олєг</h1>
   <div class="subtitle">Оберіть платформу для прослуховування</div>
@@ -88,7 +80,7 @@ footer .cap{font-size:10px;letter-spacing:.36em;text-transform:uppercase;
   </div>
 </main>
 <footer>
-  <img src="../_assets/enko.png" alt="ENKO" onerror="this.style.display='none'">
+  <img src="../assets/enko.png" alt="ENKO" onerror="this.style.display='none'">
   <div class="cap">Music Distribution</div>
 </footer>
 </body>
