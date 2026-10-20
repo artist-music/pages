@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIRESH — звіт по релізах</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#0b0b0f; --muted:#5b6170; --line:#e4e7ee;
+    --blue:#1a3cff; --blue-soft:#eef1ff; --na:#9aa1b0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.5}
+  .wrap{max-width:1080px;margin:0 auto;padding:40px 24px 64px}
+  header h1{font-size:30px;font-weight:800;margin:0 0 6px;letter-spacing:-.5px}
+  header p{margin:0;color:var(--muted);font-size:14px}
+  .tabs{display:flex;gap:8px;margin:28px 0 32px;border-bottom:2px solid var(--line)}
+  .tab{appearance:none;border:0;background:none;font:inherit;font-weight:700;font-size:16px;padding:12px 18px;cursor:pointer;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px}
+  .tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+  .panel{display:none}.panel.active{display:block}
+  .hero{display:flex;gap:24px;align-items:center;margin-bottom:28px;flex-wrap:wrap}
+  .hero img{width:140px;height:140px;border-radius:8px;object-fit:cover;border:1px solid var(--line)}
+  .hero h2{margin:0;font-size:28px;font-weight:800}
+  .hero .meta{color:var(--muted);font-size:14px;margin-top:6px}
+  .hero a{color:var(--blue);text-decoration:none;font-weight:600}
+  h3{font-size:18px;font-weight:800;margin:36px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  h3 .num{color:var(--blue);margin-right:8px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+  .kpi{border:1px solid var(--line);border-radius:10px;padding:16px}
+  .kpi .v{font-size:24px;font-weight:800;color:var(--blue)}
+  .kpi .v.na{color:var(--na);font-size:18px}
+  .kpi .l{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-top:4px}
+  .tblwrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700}
+  td.r,th.r{text-align:right}
+  td a{color:var(--blue);text-decoration:none;font-weight:600}
+  .na{color:var(--na)}
+  .pl{display:flex;align-items:center;gap:12px}
+  .pl img{width:44px;height:44px;border-radius:6px;object-fit:cover;border:1px solid var(--line);flex:none}
+  .note{background:var(--blue-soft);border-left:4px solid var(--blue);padding:14px 16px;border-radius:6px;font-size:14px;margin:12px 0}
+  .gap{border:1px dashed #c4c9d6;border-radius:10px;padding:14px 16px;font-size:14px;color:var(--muted)}
+  .gap b{color:var(--ink)}
+  ul{margin:8px 0;padding-left:20px} li{margin:4px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--blue-soft);color:var(--blue);white-space:nowrap}
+  .tag.dark{background:var(--ink);color:#fff}
+  .tag.grey{background:#f1f2f5;color:var(--muted)}
+  .bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;min-width:80px}
+  .bar span{display:block;height:100%;background:var(--blue)}
+  .small{font-size:13px;color:var(--muted)}
+  footer{margin-top:48px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+  @media(max-width:600px){.wrap{padding:24px 16px 48px}header h1{font-size:24px}.hero img{width:100px;height:100px}table{font-size:13px}th,td{padding:8px 6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>DIRESH — звіт по релізах</h1>
+  <p>Дата зрізу: 21.10.2026 · Джерела: Songstats, Spotify (публічні дані), Instagram @diresh_music, TikTok @diresh_accordion</p>
+</header>
+
+<div class="note"><b>Про дані.</b> Релізи додані в Songstats 20.10 — плейлисти підтягнулись з історією, але лічильник стрімів Spotify ще не зібраний (показує 0), тому стріми взяті з публічної сторінки Spotify. DIRESH відсутній у ростерах Spotify for Artists та Apple Music for Artists, доступних ENKO, — алгоритміка (Release Radar, Discover Weekly, Radio) і saves недоступні.</div>
+
+<div class="tabs">
+  <button class="tab active" data-t="toosita">Toosita</button>
+  <button class="tab" data-t="lumina">LUMINA</button>
+</div>
+
+<!-- ================= TOOSITA ================= -->
+<section class="panel active" id="toosita">
+  <div class="hero">
+    <img src="data:image/jpeg;base64,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" alt="Toosita cover">
+    <div>
+      <h2>Toosita</h2>
+      <div class="meta">DIRESH · Single · 2 треки · реліз 09.10.2026 · 12 днів після релізу · Pop</div>
+      <div class="meta">Автор, продюсер, звукорежисер — Дмитро Решетник</div>
+      <div class="meta"><a href="https://open.spotify.com/album/7ACXWgySzLY8DJVnlzXmll" target="_blank">Spotify</a> · <a href="https://music.apple.com/us/album/toosita/6817776766" target="_blank">Apple Music</a> · <a href="https://songstats.com/track/fjrpkht1/toosita" target="_blank">Songstats</a></div>
+    </div>
+  </div>
+
+  <h3><span class="num">01</span>Ключові показники</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">&lt; 1 000</div><div class="l">Spotify plays (кожен трек)</div></div>
+    <div class="kpi"><div class="v">2</div><div class="l">Плейлисти всього</div></div>
+    <div class="kpi"><div class="v">1</div><div class="l">Редакційний (Apple Music)</div></div>
+    <div class="kpi"><div class="v">#20</div><div class="l">Пік у «Промінь рекомендує»</div></div>
+    <div class="kpi"><div class="v">940</div><div class="l">Слухачів DIRESH / міс</div></div>
+  </div>
+
+  <h3><span class="num">02</span>Прослуховування</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Трек</th><th>ISRC</th><th>Тривалість</th><th class="r">Spotify plays</th></tr>
+    <tr><td>Toosita</td><td>UAEO12601032</td><td>2:46</td><td class="r">&lt; 1 000</td></tr>
+    <tr><td>Toosita — EXTENDED MIX</td><td>UAEO12601031</td><td>4:01</td><td class="r">&lt; 1 000</td></tr>
+  </table></div>
+  <p class="small">Spotify не показує точний лічильник для треків до 1 000 відтворень. На сторінці артиста Toosita — #2 у Popular.</p>
+
+  <h3><span class="num">03</span>Плейлисти та потрапляння</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Плейлист</th><th>Платформа</th><th>Тип</th><th>Додано</th><th class="r">Пік</th><th class="r">Зараз</th><th>Статус</th></tr>
+    <tr>
+      <td><div class="pl"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAwADADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAABAUGAQMC/8QALRAAAgEDAwIFBAEFAAAAAAAAAQIDAAQRBRIhMUEGEyJRYRQkkaFxIzNSwfD/xAAYAQADAQEAAAAAAAAAAAAAAAABAgMABP/EABwRAAIDAQADAAAAAAAAAAAAAAABAgMRIRJBUf/aAAwDAQACEQMRAD8Aa2Ol2VzosKtB9zMkpSQE5yvQY70XHpOkpHJ9XAEUpCu7cRsLDk/mp9tXtbSG2ikurpZoiWRYkztyeT/3tQmu+Ina1UQXEs/1L+rzABlVAxwO4JNM0Ti9RS2+i6bHbfTyIk9zG8RlkDZHqfGPwP3XCWx0651DUdPGnLALeJmSdWbggd88VI2GvXFkswbcmdrYXgEryKyXxNrt5ZM8967W5OHUDHFK2USZ3SWzWNVksmdgMMwmIzyecY/j8Vznls3iKw2bRvnIcy7v1ihnnjWJZGOA3SsjkSYZjOcUDBkiEalHKpGWAUc4NeddtvLmVmRAWYke5BHX55pjrF1FbadmNU84kIpx09zUs0kk0wlldnf3JzQlLula6m4JfBnrChdKg3Iq+nG4Dknjj9UmimRdPliLkMxGFx1pvHcM8RR/WCMYIzSe+iSOVWjGFcZx7HvQg0+FLapQXmdmKzRWoyWXJVgOxpilukN/JHGpVQoIB+azwtamW5Imh3wMM7j2I6GrR4YksmVUUjIzkZzRbxkF1Z7Ja8gElhb7uW3c/HFJhEyOVPUHFPpFLRqvPBoc226RmI6nNFw0aF2AaRlYmcf4msvtOkkMAtxlNgzk9D3/ANUx8j+mV960xsEG3IbGM/FCNbT0e29SWBHh1UijKIeEO3Oep70/uH+0IB6sM1KR28kX9uR1/g4oy3kuFcCSV2X2JqirW9OSdraeH//Z" alt=""><div><a href="https://music.apple.com/us/playlist/new-music-daily/pl.2b0e6e332fdf4b7a91164da3162127b5" target="_blank">New Music Daily</a><br><span class="na" style="font-size:12px">Apple Music · регіональна версія</span></div></div></td>
+      <td>Apple Music</td><td><span class="tag dark">Editorial</span></td><td>09.10.2026</td><td class="r">#86</td><td class="r na">—</td><td><span class="tag grey">Знято 09.10</span></td>
+    </tr>
+    <tr>
+      <td><div class="pl"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAwADADASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAwUCBAYAAf/EAC8QAAEEAQMCAwUJAAAAAAAAAAECAwQRABIhMQVBBhNRFpGh0fAiIzJxgpKxweH/xAAZAQACAwEAAAAAAAAAAAAAAAABBAADBQb/xAAfEQACAgICAwEAAAAAAAAAAAABAgADEZEEIRITUjH/2gAMAwEAAhEDEQA/AMXEixHGSqTILatYAAHb1zpESO0rVGkB1G2x2VnOsFDYPYk5JuOVBNDcnHQhz+xNrgRLkBjU2TXfG4jBQWK7H+BkIzAjwxqH2iThQ6fNVX1xgsko7MzE5ktvKSRh+odPgM9IiyI8rzJLh+8b1A1t6VtXG/OMerRPMKXEDn/MXnp7hbUrTsDWUFxjuNCs56nsVxEhssumuSk43jRmmXmlLI0iiffmVbdoWDjJqS9IUlpq1OKAAAxtbFAJMzLOO5YBY8efS8pWn8Os178C+6lkLPfFLEwoFK2IPfBzJnmKO+VvgxmoFZpI6m5UYHULTd/DJuPxW21skiyoZlGJq2gQlR3wTstSllRUecSsq8poV24E27Xh7pzl6Ibe3Nkj+8txOiNR1hUaM2hR2sHf44ZpaE3rRqvvfGFL0famCP1ZzgtLLhmOzOgNQVsqo0JQd6HFfd1uxWytW+q6v6vB+zkJW4htm+Nzv8cYOuNKSA22Un87wVn1OD3MvQY7k9Ct2VGpUPhqCDRhtfuPzyK/DvT0I1KhN1dcn55d1KHCj784km7JN4DyH+juEUJ8jU//2Q==" alt=""><div><a href="https://open.spotify.com/playlist/08s6IdtMUFQOdRzOnbfi7b" target="_blank">Промінь рекомендує. Новинки</a><br><span class="na" style="font-size:12px">Радіо Промінь · 214 фоловерів</span></div></div></td>
+      <td>Spotify</td><td><span class="tag">Медіа / юзерський</span></td><td>09.10.2026</td><td class="r">#20</td><td class="r">#79</td><td><span class="tag">В плейлисті</span></td>
+    </tr>
+  </table></div>
+  <p class="small">New Music Daily: трек простояв ~12,5 год (09.10, 06:16–18:45) в одній із регіональних версій плейлиста. Amazon, Deezer, Tidal, YouTube — плейлистів немає.</p>
+
+  <h3><span class="num">04</span>Інші платформи (Songstats)</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Платформа</th><th>Показник</th><th class="r">Значення</th></tr>
+    <tr><td>Spotify</td><td>Плейлист-охоплення</td><td class="r">214</td></tr>
+    <tr><td>Deezer</td><td>Popularity</td><td class="r">10</td></tr>
+    <tr><td>Shazam</td><td>Shazams</td><td class="r">0</td></tr>
+    <tr><td>Beatport</td><td>DJ-чарти / чарти</td><td class="r">0 / 0</td></tr>
+    <tr><td>Tracklist (1001TL)</td><td>DJ support</td><td class="r">0</td></tr>
+    <tr><td>Радіо</td><td>Ефіри / станції</td><td class="r">0 / 0</td></tr>
+    <tr><td>YouTube</td><td>Відео / Shorts з треком</td><td class="r">0 / 0</td></tr>
+    <tr><td>Чарти (усі платформи)</td><td>Потрапляння</td><td class="r">0</td></tr>
+  </table></div>
+
+  <h3><span class="num">05</span>Алгоритмічна підтримка</h3>
+  <div class="gap"><b>Немає доступу.</b> Release Radar, Discover Weekly, Radio, Autoplay — тільки в Spotify for Artists. Songstats алгоритмічні плейлисти не трекає.</div>
+
+  <h3><span class="num">06</span>Соцмережі</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Платформа</th><th>Контент під реліз</th><th class="r">Відео з треком (Songstats)</th></tr>
+    <tr><td>Instagram @diresh_music</td><td>Окремого поста/Reels у стрічці немає; лінк на реліз у біо</td><td class="r">0</td></tr>
+    <tr><td>TikTok @diresh_accordion</td><td>Відео під реліз немає; у біо досі посилання на LUMINA</td><td class="r">0</td></tr>
+  </table></div>
+  <div class="kpis" style="margin-top:16px">
+    <div class="kpi"><div class="v">9 779</div><div class="l">Підписники IG</div></div>
+    <div class="kpi"><div class="v">16,5K</div><div class="l">Підписники TikTok</div></div>
+    <div class="kpi"><div class="v">0</div><div class="l">Відео з треком</div></div>
+  </div>
+
+  <h3><span class="num">07</span>Висновки</h3>
+  <ul>
+    <li>Найсильніше потрапляння — редакційний New Music Daily (Apple Music), але лише на пів дня і на #86.</li>
+    <li>Spotify: тільки «Промінь рекомендує. Новинки» — пік #20 на старті, зараз #79.</li>
+    <li>За 12 днів — менше 1 000 відтворень на Spotify, нуль Shazam, нуль відео з треком.</li>
+    <li>Промо в соцмережах відсутнє: жодного Reels у стрічці Instagram, жодного відео в TikTok, а в біо TikTok досі стоїть лінк на LUMINA.</li>
+  </ul>
+</section>
+
+<!-- ================= LUMINA ================= -->
+<section class="panel" id="lumina">
+  <div class="hero">
+    <img src="data:image/jpeg;base64,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" alt="LUMINA cover">
+    <div>
+      <h2>LUMINA</h2>
+      <div class="meta">DIRESH · Single · 2 треки · реліз 04.09.2026 · 47 днів після релізу · Electronic, Dance / Pop</div>
+      <div class="meta">Автор, продюсер — Дмитро Решетник · цимбали — Михайло Чудновський (@thecymbalman_)</div>
+      <div class="meta"><a href="https://open.spotify.com/album/3JCiwW7Y0hoHt3G2ZDiXa9" target="_blank">Spotify</a> · <a href="https://music.apple.com/us/album/lumina/6801301776" target="_blank">Apple Music</a> · <a href="https://songstats.com/track/xs819mig/lumina" target="_blank">Songstats</a></div>
+    </div>
+  </div>
+
+  <h3><span class="num">01</span>Ключові показники</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">&lt; 1 000</div><div class="l">Spotify plays (кожен трек)</div></div>
+    <div class="kpi"><div class="v">1</div><div class="l">Плейлисти всього</div></div>
+    <div class="kpi"><div class="v">0</div><div class="l">Редакційні</div></div>
+    <div class="kpi"><div class="v">#18</div><div class="l">Пік у «Промінь рекомендує»</div></div>
+    <div class="kpi"><div class="v">16 203</div><div class="l">Перегляди IG + TikTok</div></div>
+  </div>
+
+  <h3><span class="num">02</span>Прослуховування</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Трек</th><th>ISRC</th><th>Тривалість</th><th class="r">Spotify plays</th></tr>
+    <tr><td>LUMINA</td><td>UAEO12600975</td><td>3:38</td><td class="r">&lt; 1 000</td></tr>
+    <tr><td>LUMINA — EXTENDED MIX</td><td>UAEO12600974</td><td>4:40</td><td class="r">&lt; 1 000</td></tr>
+  </table></div>
+  <p class="small">На сторінці артиста LUMINA — #4, Extended Mix — #5 у Popular.</p>
+
+  <h3><span class="num">03</span>Плейлисти та потрапляння</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Плейлист</th><th>Платформа</th><th>Тип</th><th>Додано</th><th class="r">Пік</th><th class="r">Зараз</th><th>Статус</th></tr>
+    <tr>
+      <td><div class="pl"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAwADADASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAwUCBAYAAf/EAC8QAAEEAQMCAwUJAAAAAAAAAAECAwQRABIhMQVBBhNRFpGh0fAiIzJxgpKxweH/xAAZAQACAwEAAAAAAAAAAAAAAAABBAADBQb/xAAfEQACAgICAwEAAAAAAAAAAAABAgADEZEEIRITUjH/2gAMAwEAAhEDEQA/AMXEixHGSqTILatYAAHb1zpESO0rVGkB1G2x2VnOsFDYPYk5JuOVBNDcnHQhz+xNrgRLkBjU2TXfG4jBQWK7H+BkIzAjwxqH2iThQ6fNVX1xgsko7MzE5ktvKSRh+odPgM9IiyI8rzJLh+8b1A1t6VtXG/OMerRPMKXEDn/MXnp7hbUrTsDWUFxjuNCs56nsVxEhssumuSk43jRmmXmlLI0iiffmVbdoWDjJqS9IUlpq1OKAAAxtbFAJMzLOO5YBY8efS8pWn8Os178C+6lkLPfFLEwoFK2IPfBzJnmKO+VvgxmoFZpI6m5UYHULTd/DJuPxW21skiyoZlGJq2gQlR3wTstSllRUecSsq8poV24E27Xh7pzl6Ibe3Nkj+8txOiNR1hUaM2hR2sHf44ZpaE3rRqvvfGFL0famCP1ZzgtLLhmOzOgNQVsqo0JQd6HFfd1uxWytW+q6v6vB+zkJW4htm+Nzv8cYOuNKSA22Un87wVn1OD3MvQY7k9Ct2VGpUPhqCDRhtfuPzyK/DvT0I1KhN1dcn55d1KHCj784km7JN4DyH+juEUJ8jU//2Q==" alt=""><div><a href="https://open.spotify.com/playlist/08s6IdtMUFQOdRzOnbfi7b" target="_blank">Промінь рекомендує. Новинки</a><br><span class="na" style="font-size:12px">Радіо Промінь · 214 фоловерів</span></div></div></td>
+      <td>Spotify</td><td><span class="tag">Медіа / юзерський</span></td><td>05.09.2026</td><td class="r">#18</td><td class="r">#380</td><td><span class="tag">В плейлисті</span></td>
+    </tr>
+  </table></div>
+  <p class="small">Apple Music, Amazon, Deezer, Tidal, YouTube — плейлистів немає, редакційних потраплянь немає.</p>
+
+  <h3><span class="num">04</span>Інші платформи (Songstats)</h3>
+  <div class="tblwrap"><table>
+    <tr><th>Платформа</th><th>Показник</th><th class="r">Значення</th></tr>
+    <tr><td>Spotify</td><td>Плейлист-охоплення</td><td class="r">214</td></tr>
+    <tr><td>Deezer</td><td>Popularity</td><td class="r">10</td></tr>
+    <tr><td>Shazam</td><td>Shazams</td><td class="r">0</td></tr>
+    <tr><td>Beatport</td><td>DJ-чарти / чарти</td><td class="r">0 / 0</td></tr>
+    <tr><td>Tracklist (1001TL)</td><td>DJ support</td><td class="r">0</td></tr>
+    <tr><td>Радіо</td><td>Ефіри / станції</td><td class="r">0 / 0</td></tr>
+    <tr><td>YouTube</td><td>Відео / Shorts з треком</td><td class="r">0 / 0</td></tr>
+    <tr><td>Чарти (усі платформи)</td><td>Потрапляння</td><td class="r">0</td></tr>
+  </table></div>
+
+  <h3><span class="num">05</span>Алгоритмічна підтримка</h3>
+  <div class="gap"><b>Немає доступу.</b> Release Radar, Discover Weekly, Radio, Autoplay — тільки в Spotify for Artists. Songstats алгоритмічні плейлисти не трекає.</div>
+
+  <h3><span class="num">06</span>Соцмережі — Instagram @diresh_music</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">3</div><div class="l">Reels про реліз</div></div>
+    <div class="kpi"><div class="v">14 616</div><div class="l">Перегляди</div></div>
+    <div class="kpi"><div class="v">692</div><div class="l">Лайки</div></div>
+    <div class="kpi"><div class="v">96</div><div class="l">Коментарі</div></div>
+    <div class="kpi"><div class="v">5,6%</div><div class="l">ER від переглядів*</div></div>
+  </div>
+  <div class="tblwrap" style="margin-top:16px"><table>
+    <tr><th>Дата</th><th>Reels</th><th class="r">Перегляди</th><th></th><th class="r">Лайки</th><th class="r">Коменти</th><th class="r">Репости</th></tr>
+    <tr><td>03.09</td><td><a href="https://www.instagram.com/diresh_music/reel/Dc1oQL_OZlW/" target="_blank">Анонс «Out Tomorrow»</a></td><td class="r">7 092</td><td><div class="bar"><span style="width:100%"></span></div></td><td class="r">296</td><td class="r">46</td><td class="r">21</td></tr>
+    <tr><td>04.09</td><td><a href="https://www.instagram.com/diresh_music/reel/Dc3c-eFoN3J/" target="_blank">Колаб з @thecymbalman_ (акустика)</a></td><td class="r">3 163</td><td><div class="bar"><span style="width:45%"></span></div></td><td class="r">190</td><td class="r">26</td><td class="r">3</td></tr>
+    <tr><td>07.09</td><td><a href="https://www.instagram.com/diresh_music/reel/Dc_rcrsReoY/" target="_blank">Подяка за підтримку релізу</a></td><td class="r">4 361</td><td><div class="bar"><span style="width:61%"></span></div></td><td class="r">206</td><td class="r">24</td><td class="r">11</td></tr>
+  </table></div>
+  <p class="small">* (лайки + коментарі + репости) / перегляди. Для контексту: звичайні Reels акаунта — 2,4–4,9K переглядів; афіші подій — 52–85K; колаб з @eugenkhmara — 769K.</p>
+
+  <h3><span class="num">07</span>Соцмережі — TikTok @diresh_accordion</h3>
+  <div class="kpis">
+    <div class="kpi"><div class="v">3</div><div class="l">Відео про реліз</div></div>
+    <div class="kpi"><div class="v">1 587</div><div class="l">Перегляди</div></div>
+    <div class="kpi"><div class="v">137</div><div class="l">Лайки</div></div>
+    <div class="kpi"><div class="v">17</div><div class="l">Коментарі</div></div>
+    <div class="kpi"><div class="v">9,7%</div><div class="l">ER від переглядів**</div></div>
+  </div>
+  <div class="tblwrap" style="margin-top:16px"><table>
+    <tr><th>Дата</th><th>Відео</th><th class="r">Перегляди</th><th></th><th class="r">Лайки</th><th class="r">Коменти</th><th class="r">Збереження</th></tr>
+    <tr><td>03.09</td><td><a href="https://www.tiktok.com/@diresh_accordion/video/7681405772810652935" target="_blank">Анонс «Out Tomorrow»</a></td><td class="r">894</td><td><div class="bar"><span style="width:100%"></span></div></td><td class="r">70</td><td class="r">11</td><td class="r">5</td></tr>
+    <tr><td>04.09</td><td><a href="https://www.tiktok.com/@diresh_accordion/video/7681775274777726226" target="_blank">Колаб з Михайлом Чудновським (акустика)</a></td><td class="r">345</td><td><div class="bar"><span style="width:39%"></span></div></td><td class="r">25</td><td class="r">0</td><td class="r">1</td></tr>
+    <tr><td>07.09</td><td><a href="https://www.tiktok.com/@diresh_accordion/video/7682856732560870664" target="_blank">Подяка за підтримку релізу</a></td><td class="r">348</td><td><div class="bar"><span style="width:39%"></span></div></td><td class="r">42</td><td class="r">6</td><td class="r">1</td></tr>
+  </table></div>
+  <p class="small">** (лайки + коментарі) / перегляди. Акаунт: 16,5K підписників, 170,9K лайків; закріплене відео (танго) — 1,2M переглядів. Інші свіжі відео — 300–500 переглядів. Songstats фіксує 0 відео інших авторів з треком.</p>
+
+  <h3><span class="num">08</span>Висновки</h3>
+  <ul>
+    <li>Єдине потрапляння — «Промінь рекомендує. Новинки»: пік #18 наступного дня після релізу, зараз #380 з 397, тобто трек уже в кінці списку.</li>
+    <li>Редакційної підтримки на жодній платформі не було.</li>
+    <li>Instagram-промо відпрацювало вище середнього по акаунту (анонс — 7 092 перегляди). У TikTok ті самі три ролики зібрали 1 587 переглядів — на рівні інших свіжих відео, без вірусного ефекту.</li>
+    <li>Сумарно 16,2K переглядів у соцмережах не конвертувались у стріми: за 47 днів менше 1 000 на Spotify і 0 Shazam.</li>
+    <li>Після 07.09 контенту під реліз немає.</li>
+  </ul>
+</section>
+
+<h3 style="margin-top:48px">Що ще потрібно для повного звіту</h3>
+<ul>
+  <li><b>Spotify for Artists:</b> доступ до DIRESH (ID 6BaMgTvqYxR3CXH3GWwRdu) — стріми, слухачі, saves, алгоритмічні плейлисти.</li>
+  <li><b>Apple Music for Artists:</b> доступ до DIRESH (ID 1470964010) — Plays, Shazams, країна потрапляння в New Music Daily.</li>
+  <li><b>Songstats:</b> стріми Spotify з’являться після першого збору даних — звіт можна оновити за кілька днів.</li>
+</ul>
+
+<footer>Зібрано 21.10.2026. Дати релізів вказані за фактичним виходом через ENKO (+1 день до дати на платформах). «&lt; 1 000» — поріг, нижче якого Spotify не показує лічильник. Плейлисти і показники платформ — Songstats. Метрики Instagram і TikTok — публічні дані на момент зрізу.</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===b.dataset.t));
+}));
+</script>
+</body>
+</html>
